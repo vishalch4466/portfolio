@@ -8,7 +8,7 @@ const projects = [
     tags: ["React 19", "WebRTC", "TanStack Start", "TypeScript", "Tailwind"],
   },
   {
-    name: "RUSTRUN", repo: "rustrun-studio", cat: "Web3 · AI", featured: true,
+    name: "RUSTRUN", repo: "Rustrun", cat: "Web3 · AI", featured: true,
     img: "assets/rustrun.png",
     desc: "A browser IDE for Solana Anchor programs — write Rust in a Monaco editor, build & deploy to devnet, and scaffold complete programs with a Claude-powered AI assistant.",
     tags: ["React", "Monaco", "Solana Anchor", "Claude API", "Supabase"],
