@@ -78,5 +78,20 @@ const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 20);
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
+// ===== Mobile burger menu =====
+const burger = document.getElementById("burger");
+const backdrop = document.getElementById("nav-backdrop");
+const setMenu = (open) => {
+  nav.classList.toggle("open", open);
+  backdrop.classList.toggle("show", open);
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+  document.body.style.overflow = open ? "hidden" : "";
+};
+burger.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+backdrop.addEventListener("click", () => setMenu(false));
+document.querySelectorAll("#menu a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+window.addEventListener("resize", () => { if (window.innerWidth > 820) setMenu(false); });
+
 // ===== Year =====
 document.getElementById("year").textContent = new Date().getFullYear();
