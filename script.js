@@ -28,6 +28,13 @@ syncToggleLabel();
 const GH = "https://github.com/vishalch4466/";
 const projects = [
   {
+    name: "autopilotmode", repo: "autopilotmode", cat: "AI Agents · Rust", featured: true,
+    img: "assets/autopilotmode.png",
+    site: "https://autopilotmode.ai/",
+    desc: "A computer-use agent that drives your real mouse and keyboard from a screenshot — look, act, look again. No selectors or integrations, so it works in any app, website, or game that a script can't.",
+    tags: ["Rust", "Claude API", "OpenRouter", "Computer Use", "Tauri", "Voice"],
+  },
+  {
     name: "Pinechat", repo: "pinechat-glass-ui", cat: "Real-time", featured: true,
     img: "assets/pinechat.png",
     desc: "Peer-to-peer, end-to-end encrypted chat and file sharing over WebRTC — messages and files travel directly between browsers and never touch a relay.",
@@ -90,7 +97,10 @@ grid.innerHTML = projects.map(p => `
       <p class="proj-repo">vishalch4466/${p.repo}</p>
       <p>${p.desc}</p>
       <div class="proj-tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
-      <a class="proj-link" href="${GH + p.repo}" target="_blank" rel="noopener">View on GitHub ${extIcon}</a>
+      <div class="proj-links">
+        <a class="proj-link" href="${GH + p.repo}" target="_blank" rel="noopener">View on GitHub ${extIcon}</a>
+        ${p.site ? `<a class="proj-link" href="${p.site}" target="_blank" rel="noopener">Visit site ${extIcon}</a>` : ""}
+      </div>
     </div>
   </article>
 `).join("");
