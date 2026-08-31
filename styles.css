@@ -282,6 +282,19 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 .proj-link .ic { width: 13px; height: 13px; transition: transform .15s; }
 .proj-link:hover .ic { transform: translate(1.5px, -1.5px); }
 
+/* ===== Impact ===== */
+.impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.impact {
+  display: flex; flex-direction: column; gap: 6px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; box-shadow: var(--shadow-sm);
+  transition: border-color .15s, background .15s, transform .15s;
+}
+.impact:hover { border-color: var(--border-strong); background: var(--surface-2); transform: translateY(-1px); }
+.impact h3 { font-size: .93rem; line-height: 1.4; }
+.impact-stack { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .72rem; color: var(--fg-muted); }
+.impact p:last-child { font-size: .845rem; color: var(--fg-muted); line-height: 1.6; margin-top: 4px; }
+
 /* ===== Experience ===== */
 .timeline { position: relative; padding-left: 22px; margin-bottom: 56px; }
 .timeline::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
@@ -303,6 +316,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 .edu-top { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; }
 .edu-top h3 { font-size: .96rem; }
 .edu .tl-org { margin: 3px 0 14px; }
+.edu .tl-org:last-child { margin-bottom: 0; }
+/* A lone degree card should not stretch the full content width. */
+.edu-grid:has(.edu:only-child) { grid-template-columns: minmax(320px, 540px); }
 .edu-meta { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px; }
 .edu-meta > div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; }
 .edu-meta dt { font-size: .78rem; color: var(--fg-muted); }
@@ -374,6 +390,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
   .hero-title { max-width: none; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+  .impact-grid { grid-template-columns: 1fr; }
   .edu-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
@@ -383,6 +400,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
-  .project:hover, .cert:hover { transform: none; }
+  .project:hover, .cert:hover, .impact:hover { transform: none; }
   .project:hover .proj-shot img { transform: none; }
 }

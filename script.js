@@ -31,19 +31,19 @@ const projects = [
     name: "autopilotmode", repo: "autopilotmode", cat: "AI Agents · Rust", featured: true,
     img: "assets/autopilotmode.png",
     site: "https://autopilotmode.ai/",
-    desc: "A computer-use agent that drives your real mouse and keyboard from a screenshot — look, act, look again. No selectors or integrations, so it works in any app, website, or game that a script can't.",
+    desc: "A computer-use agent that drives your real mouse and keyboard from a screenshot: look, act, look again. No selectors or integrations, so it works in any app, website, or game that a script can't.",
     tags: ["Rust", "Claude API", "OpenRouter", "Computer Use", "Tauri", "Voice"],
   },
   {
     name: "Pinechat", repo: "pinechat-glass-ui", cat: "Real-time", featured: true,
     img: "assets/pinechat.png",
-    desc: "Peer-to-peer, end-to-end encrypted chat and file sharing over WebRTC — messages and files travel directly between browsers and never touch a relay.",
+    desc: "Peer-to-peer, end-to-end encrypted chat and file sharing over WebRTC, so messages and files travel directly between browsers and never touch a relay.",
     tags: ["React 19", "WebRTC", "TanStack Start", "TypeScript", "Tailwind"],
   },
   {
     name: "RUSTRUN", repo: "Rustrun", cat: "Web3 · AI", featured: true,
     img: "assets/rustrun.png",
-    desc: "A browser IDE for Solana Anchor programs — write Rust in a Monaco editor, build & deploy to devnet, and scaffold complete programs with a Claude-powered AI assistant.",
+    desc: "A browser IDE for Solana Anchor programs: write Rust in a Monaco editor, build & deploy to devnet, and scaffold complete programs with a Claude-powered AI assistant.",
     tags: ["React", "Monaco", "Solana Anchor", "Claude API", "Supabase"],
   },
   {
@@ -55,7 +55,7 @@ const projects = [
   {
     name: "Lumen", repo: "write-guide-maker", cat: "AI · Web",
     img: "assets/lumen.png",
-    desc: "“Docs as a Service” — authenticated authors publish GitBook-style documentation at custom permalinks, with an AI-powered “import from GitHub” flow that drafts pages from a repo.",
+    desc: "“Docs as a Service”: authenticated authors publish GitBook-style documentation at custom permalinks, with an AI-powered “import from GitHub” flow that drafts pages from a repo.",
     tags: ["React", "Supabase", "AI Import", "TanStack"],
   },
   {
@@ -65,12 +65,12 @@ const projects = [
   },
   {
     name: "DocuAI", repo: "DocuAI", cat: "AI · RAG",
-    desc: "Chat with your PDFs in natural language — upload a document and ask questions, getting accurate, context-aware answers powered by FastAPI + OpenAI.",
+    desc: "Chat with your PDFs in natural language. Upload a document and ask questions, and get accurate, context-aware answers powered by FastAPI + OpenAI.",
     tags: ["Python", "FastAPI", "OpenAI", "RAG"],
   },
   {
     name: "Git Repo Analyzer", repo: "gitrepo-analyzer", cat: "Dev Tools",
-    desc: "Automated, systematic evaluations of Git repository health — objective quality metrics and actionable recommendations, no manual review required.",
+    desc: "Automated, systematic evaluations of Git repository health, giving objective quality metrics and actionable recommendations with no manual review required.",
     tags: ["TypeScript", "Automation", "DevEx"],
   },
 ];
