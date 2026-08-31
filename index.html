@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vishal Yadav Chatharasi · AI / Generative AI Engineer</title>
-  <meta name="description" content="Vishal Yadav Chatharasi, Senior AI / Generative AI Engineer building production RAG pipelines, multi-agent orchestration platforms, and LLM applications on Azure and GCP." />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="Vishal Yadav Chatharasi, AI / Generative AI Engineer building production RAG pipelines, multi-agent orchestration platforms, and LLM applications on Azure and GCP." />
+  <meta name="theme-color" content="#ffffff" id="theme-color" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -14,11 +13,11 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='50' dy='.34em' text-anchor='middle' font-family='Inter,Segoe UI,sans-serif' font-size='56' font-weight='600' fill='%23fafafa'>V</text></svg>" />
   <script>
     // Applied before first paint so the correct theme never flashes.
+    // Light is the default; the system preference is not followed.
     (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
-      } catch (e) {}
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = t === "dark" ? "dark" : "light";
     })();
   </script>
 </head>
@@ -103,7 +102,7 @@
       <div class="about-grid">
         <div class="about-lead reveal">
           <p>
-            I'm a Senior AI Engineer with 6+ years of progressive experience, from ETL and
+            I'm an AI Engineer with 6+ years of progressive experience, from ETL and
             data engineering into architecting enterprise Generative AI systems. I build
             production-grade RAG pipelines, multi-agent orchestration platforms, and
             LLM-powered applications across Banking, Healthcare, and Technology.

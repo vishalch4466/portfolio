@@ -2,8 +2,8 @@
 const root = document.documentElement;
 const themeToggle = document.getElementById("theme-toggle");
 
-const systemPrefersDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
-const activeTheme = () => root.dataset.theme || (systemPrefersDark() ? "dark" : "light");
+const themeColor = document.getElementById("theme-color");
+const activeTheme = () => (root.dataset.theme === "dark" ? "dark" : "light");
 
 const syncToggleLabel = () => {
   const next = activeTheme() === "dark" ? "light" : "dark";
@@ -11,18 +11,20 @@ const syncToggleLabel = () => {
   themeToggle.setAttribute("title", `Switch to ${next} theme`);
 };
 
+const syncThemeColor = () => {
+  themeColor.setAttribute("content", activeTheme() === "dark" ? "#0a0a0a" : "#ffffff");
+};
+
 themeToggle.addEventListener("click", () => {
   const next = activeTheme() === "dark" ? "light" : "dark";
   root.dataset.theme = next;
   try { localStorage.setItem("theme", next); } catch (e) {}
   syncToggleLabel();
+  syncThemeColor();
 });
 
-// Follow the system while the user has not made an explicit choice.
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-  if (!root.dataset.theme) syncToggleLabel();
-});
 syncToggleLabel();
+syncThemeColor();
 
 // ===== Project data (from GitHub + resume) =====
 const GH = "https://github.com/vishalch4466/";
